@@ -109,7 +109,7 @@ module DeviseTokenAuth::Concerns::SetUserByToken
           raise DeviseTokenAuth::Errors::InvalidModel, "Cannot set auth token in invalid model. Errors: #{@resource.errors.full_messages}"
         end
       end
-      refresh_headers
+      sign_out(@resource)
     end
   end
 
